@@ -9,7 +9,7 @@ CHANNEL = 1
 
 # TMP100 address defaults to 0x48 when ADD0 and ADD1 = 0
 # Change this according to the TMP100 documentation
-ADDRESS = 0x60
+ADDRESS = 0x4f
 
 # Define register locations
 TEMP_REG = 0b00
@@ -34,18 +34,24 @@ GPIO.setup(HEATER_PIN, GPIO.OUT)
 def readTempC(addr, reg):
   # Read temp data (2 bytes)
   tempData = bus.read_i2c_block_data(addr, reg, 2)  
+
   # Convert raw data to correct 12-bit format
   temp = ((tempData[0] << 8) + (tempData[1] & 0b11110000)) >> 4
+
   # Overflow check
   if (temp > 2047):
     temp -= 4096
+
   # Convert temp level to degrees C
   temp *= 0.0625 
+  return temp
 
 # Perform test
 def main():
   while(True):
     temp = readTempC(ADDRESS, TEMP_REG)
+    print(temp)
+
     if (temp >= HIGH_TEMP):
       GPIO.output(HEATER_PIN, GPIO.LOW)
     elif (temp <= LOW_TEMP):
