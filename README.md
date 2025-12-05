@@ -1,2 +1,5 @@
 # ThermalTests
-Thermal software and designs for testing
+
+Software Test, Telemetry, and Control Prototyping
+
+Work done by Systems Integration & Test 
