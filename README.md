@@ -1,5 +1,6 @@
 # ThermalTests
 
+<<<<<<< HEAD
 Software Test, Telemetry, and Control Prototyping for the SPICEsat thermal testbench.
 
 Work done by Systems Integration & Test 
@@ -16,3 +17,8 @@ All software is in the works.
 Ideally will offer concurrent telemtry read & pid control loop testing.
 
 requirements.txt on the way...
+=======
+Software Test, Telemetry, and Control Prototyping
+
+Work done by Systems Integration & Test 
+>>>>>>> 456571bab87a6c49926cd22ae34cf054a86068e7
