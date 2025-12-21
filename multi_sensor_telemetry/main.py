@@ -26,10 +26,9 @@ def main():
     
     parser = argparse.ArgumentParser()
 
-    args = parser.parse_args()
-
-
-
-if __name__ == "__main__":
-
-    main()
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        testtmp.stop()
+        testfake.stop()

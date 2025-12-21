@@ -46,4 +46,3 @@ class TMPSensor:
     def get_latest(self):
         return self._latest
     
-    ## only prints one value
