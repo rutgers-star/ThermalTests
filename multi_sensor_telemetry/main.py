@@ -16,21 +16,9 @@ def main():
     CHANNEL = 1
 
     parser = argparse.ArgumentParser()
-<<<<<<< HEAD
     parser.add_argument("--address", type=lambda x: int(x, 0), default=0x4f, help="I2C address of sensor (e.g. 0x4f or 79)")
     parser.add_argument("--fake", action="store_true", help="Use fake sensors")
     parser.add_argument("--single", action="store_true", help="Run single TMPSensor + FakeTMPSensor instead of MultiTMPSensors")
-=======
-
-<<<<<<< HEAD
-    try:
-        while True:
-            time.sleep(1)
-    except KeyboardInterrupt:
-        testtmp.stop()
-        testfake.stop()
-=======
->>>>>>> bd658933a0299e2c257fe3cfce696023d7e5dc49
     args = parser.parse_args()
     ADDRESS = args.address
 
@@ -74,10 +62,4 @@ def main():
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     main()
-=======
-
-    main()
->>>>>>> 456571bab87a6c49926cd22ae34cf054a86068e7
->>>>>>> bd658933a0299e2c257fe3cfce696023d7e5dc49
