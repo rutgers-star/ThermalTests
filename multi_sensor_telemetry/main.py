@@ -19,6 +19,7 @@ def main():
     parser.add_argument("--address", type=lambda x: int(x, 0), default=0x4f, help="I2C address of sensor (e.g. 0x4f or 79)")
     parser.add_argument("--fake", action="store_true", help="Use fake sensors")
     parser.add_argument("--single", action="store_true", help="Run single TMPSensor + FakeTMPSensor instead of MultiTMPSensors")
+    parser.add_argument("--multi", action="store_true", help="Run MultiTMPSensors instead of single TMPSensor + FakeTMPSensor")
     args = parser.parse_args()
     ADDRESS = args.address
 
@@ -29,7 +30,6 @@ def main():
             testtmp = TMPSensor(addr=ADDRESS, bus=bus, reg=TEMP_REG, interval=0.5)
             testtmp.start()
         testfake = FakeTMPSensor(addr=0x00, reg=TEMP_REG, interval=0.5, baseline=70.0)
-        testfake.start()
         try:
             while True:
                 if not args.fake:
@@ -45,10 +45,10 @@ def main():
                 bus.close()
             testfake.stop()
     else:
-        if not args.fake:
-            bus = smbus.SMBus(CHANNEL)
-            bus.write_byte_data(ADDRESS, CONFIG_REG, 0b1100000)
-            bus.close()
+       ## if not args.fake:
+        ##    bus = smbus.SMBus(CHANNEL)
+         ##   bus.write_byte_data(ADDRESS, CONFIG_REG, 0b1100000)
+       ##     bus.close()
         m = MultiTMPSensors(use_fake=args.fake)
         m.start()
         try:
