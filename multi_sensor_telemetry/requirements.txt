@@ -1,0 +1,4 @@
+argparse
+smbus
+RPi.GPIO
+time
