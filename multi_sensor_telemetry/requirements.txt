@@ -1,0 +1,3 @@
+# Only third-party dependency; all other imports are Python standard library.
+# Real I2C access requires Linux; fake mode and tests need no extra packages.
+smbus2==0.6.1; sys_platform == "linux"

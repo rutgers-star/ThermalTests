@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Telemetry output
+multi_tmp100_log.csv
+logs/
+*.log
+# Uncomment to ignore every CSV log, not just the default one:
+# *.csv
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local Docker test scaffolding
+docker/
